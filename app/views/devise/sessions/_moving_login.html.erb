@@ -1,0 +1,9 @@
+<%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+  <%= f.submit 'Logga in' %>
+  <%= link_to "Glömt ditt lösenord?", new_password_path(:user) %>
+  <%= link_to "Registrera dig", new_user_registration_path %>
+<% end %>

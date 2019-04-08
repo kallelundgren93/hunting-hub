@@ -1,0 +1,19 @@
+<video autoplay muted loop id="homeVideo">
+  <source src="landing.mp4" type="video/mp4">
+</video>
+
+<div class="content">
+  <div class="header">
+    <h2>Hunting Hub</h2>
+  </div>
+
+  <div class="main-container">
+    <% unless current_user%>
+      <%= render "devise/sessions/moving_login" %>
+    <% else %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <span class="error">Sign out</span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
